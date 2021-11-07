@@ -8,7 +8,7 @@ library(estimatr)
 library(usethis)
 
 # Read in data
-data <- import("bds.dta") # this is the dataset used for the main tables
+data <- import("data/bds.dta") # this is the dataset used for the main tables
 
 options(scipen=999)
 
@@ -132,7 +132,7 @@ for (index in 1:8) {
 # Replicating table 3: distributed lag model #
 
 # prepare data
-wmin2012 <- import("wmin2012.xlsx") # add in 2012 state minimum wages
+wmin2012 <- import("data/wmin2012.xlsx") # add in 2012 state minimum wages
 
 tbl3_data <- bind_rows(wmin2012, data) %>% # merge in 2012 state minimum wages
   arrange(statefips, year) %>% # arrange data by state and by year 
